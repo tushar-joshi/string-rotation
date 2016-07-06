@@ -20,7 +20,10 @@ public class RotationBuffer {
     public void rotate(int k) {
         
         initializeRotationValues(k);
+        performRotationSwaps();
+    }
 
+    private void performRotationSwaps() {
         while( isForwardRotationNeeded() ) {
             doForwardSwaps();
             doBackwardSwapsIfNeeded();
