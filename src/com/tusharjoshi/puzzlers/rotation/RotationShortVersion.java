@@ -15,7 +15,13 @@ public class RotationShortVersion {
         for (int index = 0; index < text.length + 1; index++) {
             String original = makeString(text);
             String rotated = rotate(text, index);
-            System.out.println(String.format("Original: %s, k: %2d, Rotated: %s", original, index, rotated));
+            System.out.println(
+                    String.format(
+                            "Original: %s, k: %2d, Rotated: %s", 
+                            original, 
+                            index, 
+                            rotated)
+            );
         }
     }
 
@@ -25,17 +31,25 @@ public class RotationShortVersion {
         int start = 0;
         int length = buffer.length;
 
-        while ((rotationSize > 0) && (rotationSize < length) && (length - start - rotationSize > 0)) {
+        while ((rotationSize > 0) 
+                && (rotationSize < length) 
+                && (length - start - rotationSize > 0)) {
+            
             while (length - start - rotationSize >= rotationSize) {
                 swaptext(buffer, start, rotationSize);
                 start = start + rotationSize;
             }
-            if ((length != start + rotationSize) && (length - start - rotationSize < rotationSize)) {
+            
+            if ((length != start + rotationSize) 
+                    && (length - start - rotationSize < rotationSize)) {
+                
                 rotationSize = length - start - rotationSize;
+                
                 while (start <= length - 2 * rotationSize) {
                     swaptext(buffer, length - 2 * rotationSize, rotationSize);
                     length = length - rotationSize;
                 }
+                
                 rotationSize = length - rotationSize;
             }
         }

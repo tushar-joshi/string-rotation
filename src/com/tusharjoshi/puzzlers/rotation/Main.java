@@ -17,7 +17,14 @@ public class Main {
             RotationBuffer buffer = new RotationBuffer(text);
             String original = buffer.toString();
             buffer.rotate(index);
-            System.out.println(String.format("Original: %s, k: %2d, Rotated: %s", original, index, buffer.toString()));
+            System.out.println(
+                    String.format(
+                            "Original: %s, k: %2d, Rotated: %s", 
+                            original, 
+                            index, 
+                            buffer.toString()
+                    )
+            );
         }
     }
 
