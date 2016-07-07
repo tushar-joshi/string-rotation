@@ -37,7 +37,9 @@ public class RotationBuffer {
     }
 
     private boolean isForwardRotationNeeded() {
-        return (rotationSize > 0) && (rotationSize < length) && (length - start - rotationSize  > 0);
+        return (rotationSize > 0) 
+                && (rotationSize < length) 
+                && (length - start - rotationSize  > 0);
     }
 
     private void doForwardSwaps() {
@@ -56,7 +58,8 @@ public class RotationBuffer {
     }
 
     private boolean isBackwardRotationNeeded() {
-        return (length != start + rotationSize) && (length - start - rotationSize < rotationSize);
+        return (length != start + rotationSize) 
+                && (length - start - rotationSize < rotationSize);
     }
 
     private void calculateBackwardRotationSize() {
